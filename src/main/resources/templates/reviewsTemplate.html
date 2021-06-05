@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>The World is Your Oyster</title>
+    <link rel="stylesheet" type="text/css" href="/css/reviewsstyle.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">The World is Your Oyster</h1>
+        </header>
+        <main class="main">
+            <h2 class="main__header">You are in a position to take the opportunities that life has to offer.  Let's explore the world together.</h2>
+            <section class="main__section">
+                <button class="main__button" th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.location}"></a></button>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <small>&copy Danielle Bosworth 2021</small>
+    </footer>
+</body>
+</html>
