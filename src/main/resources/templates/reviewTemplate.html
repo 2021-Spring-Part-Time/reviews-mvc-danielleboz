@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${reviewModel.location}"></title>
+    <link rel="stylesheet" type="text/css" href="/css/reviewstyle.css">
+</head>
+<body>
+    <div class="container">
+            <header class="header">
+                <h1 class="header__title" th:text="${reviewModel.location}"></h1>
+                <nav class="header__nav">
+                    <a href="/reviews">All Locations<i class="arrow"></i></a>
+                </nav>
+            </header>
+        <main class="main">
+            <img class="main__image" th:src="${reviewModel.imageUrl}" alt="location image">
+            <article class="main__info">
+                <p th:text="'Continent: ' + ${reviewModel.continent}"></p>
+                <p th:text="'Year Traveled: ' + ${reviewModel.yearTraveled}"></p>
+                <p th:text="'My Review: ' + ${reviewModel.reviewContent}"></p>
+            </article>
+        </main>
+    </div>
+    <footer class="footer">
+        <small>&copy Danielle Bosworth 2021</small>
+    </footer>
+
+</body>
+</html>
